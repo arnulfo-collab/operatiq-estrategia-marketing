@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OperatIQ — Estrategia de Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#1D9E75;--teal-d:#085041;--teal-l:#E1F5EE;--teal-m:#9FE1CB;--ink:#0F1A16;--ink2:#1E2D27;--muted:#5A7A6E;--border:rgba(29,158,117,.18);--border2:rgba(29,158,117,.32);--white:#FFFFFF;--off:#F6FBF9;--amber:#EF9F27;--purple:#7F77DD;--coral:#D85A30}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(15,26,22,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:32px;height:32px;border-radius:7px;background:var(--teal);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:5px}
+.logo-mark span{border-radius:2px;background:white}
+.logo-mark span:nth-child(1){opacity:.96}.logo-mark span:nth-child(2){opacity:.6}.logo-mark span:nth-child(3){opacity:.6}.logo-mark span:nth-child(4){opacity:.22}
+.logo-text{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--white);letter-spacing:-.3px}
+.logo-text em{color:var(--teal);font-style:normal}
+.nav-links{display:flex;gap:2px;list-style:none}
+.nav-links a{display:block;padding:6px 13px;border-radius:6px;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:all .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{color:var(--teal-m);background:rgba(29,158,117,.12)}
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 3rem 80px;overflow:hidden}
+.hero-ring{position:absolute;border-radius:50%;border:1px solid var(--border);right:-180px;top:50%;transform:translateY(-50%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-m);margin-bottom:24px}
+.hero-tag::before{content:'';display:block;width:20px;height:1px;background:var(--teal-m)}
+h1{font-family:'Syne',sans-serif;font-size:clamp(46px,7vw,86px);font-weight:800;line-height:.95;letter-spacing:-3px;color:var(--white);max-width:700px;margin-bottom:10px;animation:fadeUp .7s ease both}
+h1 .acc{color:var(--teal)}
+.hero-sub{font-size:18px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);margin:20px 0 32px;max-width:500px;line-height:1.5;animation:fadeUp .7s .12s ease both}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;animation:fadeUp .7s .22s ease both}
+.chip{display:inline-flex;align-items:center;padding:6px 13px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--border2);color:var(--teal-m);background:rgba(29,158,117,.07)}
+.hero-img{position:absolute;right:3rem;top:50%;transform:translateY(-50%);width:360px;height:270px}
+/* PLACEHOLDERS */
+.ph{width:100%;height:100%;border-radius:14px;border:1px dashed var(--border2);background:rgba(29,158,117,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(29,158,117,.025) 0,rgba(29,158,117,.025) 1px,transparent 1px,transparent 20px)}
+.ph-tag{position:absolute;top:10px;left:10px;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:rgba(29,158,117,.12);border:1px solid var(--border2);padding:3px 8px;border-radius:4px;z-index:2}
+.ph-ico{width:40px;height:40px;border-radius:9px;background:rgba(29,158,117,.14);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.ph-lbl{font-size:12px;font-weight:500;color:var(--teal-m);position:relative;z-index:1;text-align:center;padding:0 14px}
+.ph-rec{font-size:10px;color:rgba(159,225,203,.45);position:relative;z-index:1;text-align:center;padding:0 12px;line-height:1.45}
+.ph-has-img{padding:0;border:none;background:transparent;overflow:hidden}
+.ph-has-img::before{display:none}
+.ph-has-img .ph-img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px}
+.ph-has-img .ph-tag{background:rgba(15,26,22,.75);backdrop-filter:blur(6px)}
+/* Pila vertical en columna derecha (evita ig2 de 2 cols que ponía 3 y 4 lado a lado) */
+.ig-stack{display:flex;flex-direction:column;gap:13px;height:250px;min-width:0}
+/* Imagen 4: ver composición completa (sin recorte agresivo) */
+.ph-has-img.ph-img-contain{background:rgba(12,20,17,.95);padding:6px 8px;box-sizing:border-box}
+.ph-has-img.ph-img-contain .ph-img{object-fit:contain;object-position:center}
+/* SECTIONS */
+section{position:relative;z-index:1;padding:80px 3rem}
+section:nth-child(even){background:rgba(255,255,255,.018)}
+.sec-tag{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-tag::after{content:'';display:block;width:32px;height:1px;background:var(--teal);opacity:.5}
+h2{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;color:var(--white);margin-bottom:8px}
+.sec-desc{font-size:15px;font-weight:300;color:rgba(255,255,255,.42);max-width:520px;line-height:1.6;margin-bottom:44px}
+/* CARDS */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gauto{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:22px;transition:border-color .2s,background .2s}
+.card:hover{border-color:var(--border2);background:rgba(255,255,255,.06)}
+.card.tl{border-color:rgba(29,158,117,.28);background:rgba(29,158,117,.055)}
+.card.pu{border-color:rgba(127,119,221,.28);background:rgba(127,119,221,.055)}
+.card.am{border-color:rgba(239,159,39,.28);background:rgba(239,159,39,.055)}
+.card.cr{border-color:rgba(216,90,48,.28);background:rgba(216,90,48,.055)}
+.card.bl{border-color:rgba(56,138,221,.28);background:rgba(56,138,221,.055)}
+.ctitle{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--white);margin-bottom:10px}
+.cbody{font-size:13px;font-weight:300;color:rgba(255,255,255,.52);line-height:1.65}
+/* FEAT ROWS */
+.fr{display:flex;gap:9px;align-items:flex-start;margin:7px 0;font-size:13px;color:rgba(255,255,255,.57);line-height:1.5}
+.fd{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px;background:var(--teal-m)}
+.fd.pu{background:var(--purple)}.fd.am{background:var(--amber)}.fd.bl{background:#85B7EB}.fd.cr{background:var(--coral)}
+/* CANVAS BLOCKS */
+.cb{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:20px}
+.ch{padding:15px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.ch-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--white)}
+.ch-badge{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:4px;background:rgba(29,158,117,.14);color:var(--teal-m);border:1px solid var(--border2)}
+.cbody2{padding:20px 22px}
+.ccols{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.ccol{padding:0 16px;border-right:1px solid var(--border)}
+.ccol:first-child{padding-left:0}.ccol:last-child{padding-right:0;border-right:none}
+.cclabel{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+/* QUOTE */
+.bq{border-left:2px solid var(--teal);padding:6px 0 6px 18px;font-size:14px;font-style:italic;font-weight:300;color:rgba(255,255,255,.68);line-height:1.6;margin:22px 0}
+/* TABLE */
+.dtable{width:100%;border-collapse:collapse;font-size:13px}
+.dtable th{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
+.dtable td{padding:11px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,.52);vertical-align:top;line-height:1.5}
+.dtable tr:last-child td{border-bottom:none}
+.td-n{color:var(--white);font-weight:500}
+.td-w{color:var(--teal-m);font-weight:500}
+/* USP */
+.usp{background:linear-gradient(135deg,rgba(29,158,117,.1) 0%,rgba(29,158,117,.03) 100%);border:1px solid var(--border2);border-radius:16px;padding:28px;margin-top:24px}
+.usp-t{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;line-height:1.25}
+.usp-b{font-size:13px;font-weight:300;color:rgba(255,255,255,.58);line-height:1.7}
+/* LOGO */
+.logo-box{background:rgba(29,158,117,.05);border:1px solid var(--border2);border-radius:18px;padding:40px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;margin-bottom:20px}
+.logo-big{display:flex;align-items:center;gap:14px}
+.lmb{width:52px;height:52px;border-radius:11px;background:var(--teal);display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:8px}
+.lmb span{border-radius:2px;background:white}
+.lmb span:nth-child(1){opacity:.97}.lmb span:nth-child(2){opacity:.6}.lmb span:nth-child(3){opacity:.6}.lmb span:nth-child(4){opacity:.22}
+.ltype{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1}
+.ltype em{color:var(--teal);font-style:normal}
+.ltag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.swatches{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.sw{display:flex;flex-direction:column;align-items:center;gap:5px}
+.sw-c{width:40px;height:40px;border-radius:9px;border:1px solid rgba(255,255,255,.08)}
+.sw-l{font-size:10px;color:rgba(255,255,255,.3)}
+.esl{border:1px solid var(--border2);border-radius:12px;padding:18px 26px;font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--white);line-height:1.3;text-align:center;max-width:480px}
+.esl-sub{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;color:rgba(255,255,255,.38);margin-top:6px}
+/* SPLIT */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+/* FUNNEL */
+.funnel{display:flex;flex-direction:column;gap:5px}
+.fstep{display:flex;gap:14px;align-items:flex-start;padding:15px 18px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;transition:all .2s}
+.fstep:hover{background:rgba(29,158,117,.055);border-color:var(--border2)}
+.fnum{width:26px;height:26px;border-radius:50%;background:rgba(29,158,117,.14);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--teal-m);flex-shrink:0}
+.ftitle{font-size:13px;font-weight:500;color:var(--white);margin-bottom:3px}
+.fdesc{font-size:12px;font-weight:300;color:rgba(255,255,255,.48);line-height:1.55}
+/* BADGE */
+.badge{display:inline-flex;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:5px;margin-bottom:9px}
+.btl{background:rgba(29,158,117,.13);color:var(--teal-m);border:1px solid rgba(29,158,117,.22)}
+.bpu{background:rgba(127,119,221,.13);color:#AFA9EC;border:1px solid rgba(127,119,221,.22)}
+.bam{background:rgba(239,159,39,.13);color:#FAC775;border:1px solid rgba(239,159,39,.22)}
+.bbl{background:rgba(56,138,221,.13);color:#85B7EB;border:1px solid rgba(56,138,221,.22)}
+/* TIMELINE */
+.tline{display:flex;flex-direction:column;position:relative}
+.tline::before{content:'';position:absolute;left:43px;top:0;bottom:0;width:1px;background:var(--border2)}
+.tli{display:flex;gap:18px;padding:18px 0;align-items:flex-start;position:relative}
+.tlt{width:86px;flex-shrink:0;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--teal);text-align:right;padding-top:2px}
+.tld{width:10px;height:10px;border-radius:50%;background:var(--teal);border:2px solid var(--ink);flex-shrink:0;margin-top:4px;position:relative;z-index:1}
+.tll{font-size:13px;font-weight:500;color:var(--white);margin-bottom:4px}
+.tlt2{font-size:12px;font-weight:300;color:rgba(255,255,255,.48);line-height:1.6}
+/* EVAL */
+.evitem{margin-bottom:20px}
+.evrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.evname{font-size:13px;font-weight:500;color:var(--white)}
+.evpct{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--teal-m)}
+.evdesc{font-size:12px;font-weight:300;color:rgba(255,255,255,.38);margin-bottom:7px;line-height:1.5}
+.evbar{height:4px;border-radius:2px;background:rgba(255,255,255,.08);overflow:hidden}
+.evfill{height:100%;border-radius:2px;background:var(--teal)}
+/* OBJ */
+.objcard{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:13px;padding:20px;margin-bottom:10px;transition:all .2s}
+.objcard:hover{border-color:var(--border2)}
+.objq{font-size:13px;font-weight:500;color:var(--coral);margin-bottom:7px;line-height:1.4}
+.obja{font-size:13px;font-weight:300;color:rgba(255,255,255,.52);line-height:1.65}
+/* IMG GRIDS */
+.ig2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+/* FOOTER */
+footer{position:relative;z-index:1;text-align:center;padding:36px 3rem;border-top:1px solid var(--border)}
+.flogo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px}
+.ftxt{font-size:12px;color:rgba(255,255,255,.22)}
+/* ANIM */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-sub{animation:fadeUp .7s .12s ease both}
+.chips{animation:fadeUp .7s .22s ease both}
+/* RESPONSIVE */
+@media(max-width:900px){
+nav{padding:0 1.5rem}.nav-links{display:none}
+.hero{padding:100px 1.5rem 60px}.hero-img{display:none}
+section{padding:60px 1.5rem}
+.g3,.split,.ccols{grid-template-columns:1fr}
+.ccol{padding:12px 0;border-right:none;border-bottom:1px solid var(--border)}.ccol:last-child{border-bottom:none}
+.ig2{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+/* POS TABLE rows */
+.prow{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border)}
+.prow:last-child{border-bottom:none}
+.pk{min-width:120px;font-size:11px;font-weight:600;color:rgba(255,255,255,.28);letter-spacing:.05em;text-transform:uppercase;flex-shrink:0}
+.pv{font-size:13px;color:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+    <span class="logo-text">Operat<em>IQ</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#definicion">2. Definición</a></li>
+    <li><a href="#branding">3. Branding</a></li>
+    <li><a href="#prospeccion">4. Prospección</a></li>
+    <li><a href="#presentacion">5. Presentación</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-ring" style="width:660px;height:660px;right:-200px"></div>
+  <div class="hero-ring" style="width:400px;height:400px;right:-60px;border-color:var(--border2)"></div>
+
+  <div class="hero-tag">Estrategia de Marketing · Unidad 1</div>
+
+  <h1>Operat<span class="acc">IQ</span><br>Inteligencia<br>operativa</h1>
+
+  <p class="hero-sub">"Tu negocio funciona. Con OperatIQ, por fin lo puedes ver."</p>
+
+  <div class="chips">
+    <span class="chip">Servicio digital</span>
+    <span class="chip">Mexicali, B.C.</span>
+    <span class="chip">Patient360 · Clínicas</span>
+    <span class="chip">RestaurantIQ · Restaurantes</span>
+  </div>
+
+  <div class="hero-img">
+    <div class="ph ph-has-img" style="height:100%">
+      <img class="ph-img" src="1.png" alt="Dashboard en celular — OperatIQ">
+      <div class="ph-tag">Imagen 1 — Hero</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- 2. DEFINICIÓN DEL SERVICIO                -->
+<!-- ══════════════════════════════════════════ -->
+<section id="definicion">
+  <p class="sec-tag">Sección 2</p>
+  <h2>Definición del<br>producto / servicio</h2>
+  <p class="sec-desc">Qué es OperatIQ, a quién va dirigido, qué atributos tiene y cómo se diferencia del mercado.</p>
+
+  <!-- 2.1 NOMBRE Y PROPÓSITO -->
+  <div class="cb">
+    <div class="ch"><span class="ch-title">2.1 — Nombre, propósito y necesidad que cubre</span><span class="ch-badge">Definición base</span></div>
+    <div class="cbody2">
+      <div class="g3" style="margin-bottom:22px">
+        <div class="card tl">
+          <div class="ctitle">Nombre del servicio</div>
+          <div class="cbody">OperatIQ — "Operate" + "IQ" (inteligencia). Dos verticales: <strong style="color:rgba(255,255,255,.8)">Patient360</strong> para clínicas y <strong style="color:rgba(255,255,255,.8)">RestaurantIQ</strong> para restaurantes.</div>
+        </div>
+        <div class="card pu">
+          <div class="ctitle">Propósito</div>
+          <div class="cbody">Dar visibilidad operativa real a dueños de PYME en Mexicali que operan sin datos y pierden dinero sin saberlo — con herramientas que ya existen, a precio local.</div>
+        </div>
+        <div class="card am">
+          <div class="ctitle">Necesidad que cubre</div>
+          <div class="cbody">El dueño trabaja más de 10 horas al día y aun así no sabe qué platillo o procedimiento le deja más margen, ni exactamente dónde se va el dinero.</div>
+        </div>
+      </div>
+      <div class="bq">"Yo sé que mi negocio funciona, pero no sé cuánto estoy ganando ni dónde se va el dinero. Si pudiera verlo todo en mi celular sin pagar una fortuna..." <span style="font-size:11px;color:rgba(255,255,255,.28);font-style:normal">— Frase del cliente ideal</span></div>
+    </div>
+  </div>
+
+  <!-- 2.2 CANVAS DE CLIENTE -->
+  <div class="cb">
+    <div class="ch"><span class="ch-title">2.2 — Canvas de cliente: identificación del cliente ideal</span><span class="ch-badge">3 segmentaciones</span></div>
+    <div class="cbody2">
+      <div class="ccols">
+        <div class="ccol">
+          <div class="cclabel">Demográfico</div>
+          <div class="fr"><span class="fd"></span><span>Dueño de clínica o restaurante, 30–55 años</span></div>
+          <div class="fr"><span class="fd"></span><span>Ubicado en Mexicali norte o zona centro</span></div>
+          <div class="fr"><span class="fd"></span><span>Negocio mediano: 5–40 personas en staff</span></div>
+          <div class="fr"><span class="fd"></span><span>Ya usa algún sistema de cobro o punto de venta</span></div>
+          <div class="fr"><span class="fd"></span><span>Atiende o quiere atraer clientes americanos</span></div>
+          <div class="fr"><span class="fd"></span><span>Sin área de analítica ni inteligencia de datos</span></div>
+        </div>
+        <div class="ccol">
+          <div class="cclabel" style="color:#AFA9EC">Psicográfico</div>
+          <div class="fr"><span class="fd pu"></span><span>Trabaja 10+ horas al día y siente que no controla su operación</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Toma decisiones por intuición, no por datos</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Frustrado con consultores que dan consejos sin implementar nada</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Aspiracional: quiere operar como cadena con su negocio propio</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Desconfía de tecnología cara o difícil de usar</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Valora resultados tangibles sobre promesas teóricas</span></div>
+        </div>
+        <div class="ccol">
+          <div class="cclabel" style="color:#FAC775">Conductual</div>
+          <div class="fr"><span class="fd am"></span><span>Activo en WhatsApp Business, revisa ventas desde el celular</span></div>
+          <div class="fr"><span class="fd am"></span><span>Tiene Google Business pero desactualizado o solo en español</span></div>
+          <div class="fr"><span class="fd am"></span><span>Pierde leads americanos por no responder rápido o no hablar inglés</span></div>
+          <div class="fr"><span class="fd am"></span><span>Disparador de compra: ver el dashboard por primera vez con sus datos</span></div>
+          <div class="fr"><span class="fd am"></span><span>Se retiene porque depende del sistema, no solo del consultor</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMÁGENES CLIENTE -->
+  <div class="ig2" style="margin-bottom:20px">
+    <div class="ph ph-has-img" style="height:250px">
+      <img class="ph-img" src="2.png" alt="Dueño de restaurante con celular">
+      <div class="ph-tag">Imagen 2</div>
+    </div>
+    <div class="ig-stack">
+      <div class="ph ph-has-img" style="height:100px;flex-shrink:0">
+        <img class="ph-img" src="3.png" alt="Dueña de clínica dental">
+        <div class="ph-tag">Imagen 3</div>
+      </div>
+      <div class="ph ph-has-img ph-img-contain" style="flex:1;min-height:0">
+        <img class="ph-img" src="4.png" alt="5 estrellas Google en inglés">
+        <div class="ph-tag">Imagen 4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.3 CANVAS PRODUCTO -->
+  <div class="cb">
+    <div class="ch"><span class="ch-title">2.3 — Canvas de producto: atributos del servicio</span><span class="ch-badge">Funcional · Emocional · Social</span></div>
+    <div class="cbody2">
+      <div class="ccols">
+        <div class="ccol">
+          <div class="cclabel" style="color:#85B7EB">Funcional — qué hace</div>
+          <div class="fr"><span class="fd bl"></span><span>Dashboard en celular conectado al sistema de cobro real, en tiempo real</span></div>
+          <div class="fr"><span class="fd bl"></span><span>Atención 24/7 en inglés vía WhatsApp con inteligencia artificial</span></div>
+          <div class="fr"><span class="fd bl"></span><span>Reporte mensual ejecutivo generado con IA en minutos</span></div>
+          <div class="fr"><span class="fd bl"></span><span>CCTV operativo que detecta merma, robo y conteo de personas</span></div>
+          <div class="fr"><span class="fd bl"></span><span>CRM de pacientes con seguimiento por etapa visible</span></div>
+          <div class="fr"><span class="fd bl"></span><span>Ingeniería de menú: qué subir, eliminar o renombrar para ganar más</span></div>
+        </div>
+        <div class="ccol">
+          <div class="cclabel">Emocional — qué siente</div>
+          <div class="fr"><span class="fd"></span><span>Sensación de control total de su operación diaria</span></div>
+          <div class="fr"><span class="fd"></span><span>Confianza de tomar decisiones con datos reales, no intuición</span></div>
+          <div class="fr"><span class="fd"></span><span>Orgullo de decir "opero como una cadena con mi propio negocio"</span></div>
+          <div class="fr"><span class="fd"></span><span>Tranquilidad ante merma, robo o pérdida antes invisible</span></div>
+          <div class="fr"><span class="fd"></span><span>Motivación: ve el impacto de sus decisiones en tiempo real</span></div>
+        </div>
+        <div class="ccol">
+          <div class="cclabel" style="color:#AFA9EC">Social — qué transmite</div>
+          <div class="fr"><span class="fd pu"></span><span>Badge de "Clínica Verificada" visible para pacientes americanos</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Reputación bilingüe activa en Google, Yelp y TripAdvisor</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Reseñas automatizadas después de cada visita o procedimiento</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Posicionamiento visible frente a la competencia local y fronteriza</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Presencia profesional en inglés que atrae turismo médico y gastronómico</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.4 DIFERENCIACIÓN -->
+  <div class="cb">
+    <div class="ch"><span class="ch-title">2.4 — Canvas de diferenciación: valor agregado vs. competencia</span><span class="ch-badge">4 competidores</span></div>
+    <div class="cbody2">
+      <table class="dtable">
+        <thead><tr><th style="width:22%">Competidor</th><th style="width:24%">Qué ofrecen</th><th style="width:26%">Su límite</th><th style="width:28%">Ventaja OperatIQ</th></tr></thead>
+        <tbody>
+          <tr><td class="td-n">Agencias de referidos</td><td>Refieren y cobran comisión básica por paciente</td><td>Sin tecnología, seguimiento ni auditoría de seguridad</td><td class="td-w">Sello Verificado + CRM + IA en inglés 24/7</td></tr>
+          <tr><td class="td-n">Consultores de restaurantes</td><td>Excel, recomendaciones generales y talleres</td><td>Sin conexión al punto de venta real, sin cámaras operativas</td><td class="td-w">Dashboard en vivo + CCTV + reporte con IA</td></tr>
+          <tr><td class="td-n">Empresas de seguridad</td><td>CCTV, alarmas y control de acceso físico</td><td>No saben de márgenes, datos de negocio ni BI</td><td class="td-w">Seguridad + inteligencia de datos + IA, un solo proveedor</td></tr>
+          <tr><td class="td-n">Software SaaS / ERP genérico</td><td>Sistema completo pero diseñado para empresa grande</td><td>Costoso, lento de implementar, sin soporte local</td><td class="td-w">Resultados en semanas, precio accesible, soporte en Mexicali</td></tr>
+        </tbody>
+      </table>
+      <div class="usp">
+        <div class="usp-t">Factor diferenciador único (USP)</div>
+        <div class="usp-b">OperatIQ es el único proveedor en Mexicali que combina <strong style="color:var(--white)">seguridad física + inteligencia de datos + automatización con IA</strong> en un solo servicio. Un consultor de BI no puede instalar cámaras. Una empresa de seguridad no sabe de márgenes. Nosotros hacemos las dos cosas — y esa combinación nadie puede copiarla rápido porque requiere expertise real en ambas áreas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- 3. BRANDING Y ESTRATEGIA COMERCIAL        -->
+<!-- ══════════════════════════════════════════ -->
+<section id="branding">
+  <p class="sec-tag">Sección 3</p>
+  <h2>Estrategia comercial<br>y branding</h2>
+  <p class="sec-desc">Posicionamiento, identidad de marca, canales de distribución y estructura de la oferta.</p>
+
+  <!-- 3.1 POSICIONAMIENTO -->
+  <div class="cb" style="margin-bottom:20px">
+    <div class="ch"><span class="ch-title">3.1 — Posicionamiento en el mercado</span><span class="ch-badge">Estrategia y táctica</span></div>
+    <div class="cbody2">
+      <div class="g2">
+        <div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px">Declaración de posicionamiento</div>
+          <div class="prow"><span class="pk">Categoría</span><span class="pv">Consultoría tecnológica operativa para PYME fronteriza</span></div>
+          <div class="prow"><span class="pk">Para quién</span><span class="pv">Dueños de clínicas y restaurantes en Mexicali que quieren operar con datos reales y atraer clientes americanos</span></div>
+          <div class="prow"><span class="pk">Qué hacemos</span><span class="pv">Construimos el sistema de operación visible que el dueño siempre quiso pero no sabía cómo armar</span></div>
+          <div class="prow"><span class="pk">A diferencia de</span><span class="pv">Consultores genéricos que dan consejos sin implementar sistemas reales</span></div>
+          <div class="prow"><span class="pk">Por qué creernos</span><span class="pv">Únicos con expertise en seguridad física + datos + IA + conocimiento profundo de la zona fronteriza</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="card am">
+            <div class="ctitle" style="font-size:13px">Estrategia (largo plazo)</div>
+            <div class="fr"><span class="fd am"></span><span>Ser la plataforma operativa de referencia para PYME fronteriza en B.C.</span></div>
+            <div class="fr"><span class="fd am"></span><span>Red de negocios certificados bajo la marca OperatIQ</span></div>
+            <div class="fr"><span class="fd am"></span><span>Expansión a Tijuana y San Luis Río Colorado en año 2–3</span></div>
+          </div>
+          <div class="card tl">
+            <div class="ctitle" style="font-size:13px">Tácticas (corto plazo)</div>
+            <div class="fr"><span class="fd"></span><span>Primeros clientes en las dos verticales en los primeros 90 días</span></div>
+            <div class="fr"><span class="fd"></span><span>Documentar el primer caso de éxito con métricas reales</span></div>
+            <div class="fr"><span class="fd"></span><span>Ejecutar el primer Sello Verificado como pieza de marketing</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.2 LOGO -->
+  <div class="logo-box">
+    <div class="logo-big">
+      <div class="lmb"><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="ltype">Operat<em>IQ</em></div>
+        <div class="ltag">Inteligencia operativa · Mexicali, B.C.</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:rgba(255,255,255,.42);max-width:460px;line-height:1.65;text-align:center">El símbolo son 4 cuadros con degradado de opacidad — representan los 4 módulos del servicio (datos, seguridad, IA, reputación) convergiendo en una sola vista. El cuadro más brillante es lo que el dueño controla; los más tenues son lo que aún no ve.</p>
+    <div class="swatches">
+      <div class="sw"><div class="sw-c" style="background:#1D9E75"></div><div class="sw-l">Principal</div></div>
+      <div class="sw"><div class="sw-c" style="background:#085041"></div><div class="sw-l">Oscuro</div></div>
+      <div class="sw"><div class="sw-c" style="background:#9FE1CB"></div><div class="sw-l">Acento</div></div>
+      <div class="sw"><div class="sw-c" style="background:#E1F5EE"></div><div class="sw-l">Claro</div></div>
+      <div class="sw"><div class="sw-c" style="background:#2C2C2A"></div><div class="sw-l">Neutro</div></div>
+    </div>
+    <div class="esl">
+      "Tu negocio funciona.<br>Con OperatIQ, por fin lo puedes ver."
+      <div class="esl-sub">Eslogan principal — apela al dolor de no tener visibilidad, no al miedo al fracaso</div>
+    </div>
+    <div class="g2" style="width:100%;max-width:560px">
+      <div class="card pu" style="text-align:center"><div class="ctitle" style="font-size:13px">"Tecnología de cadena, precio de consultor local"</div><div class="cbody" style="font-size:11px;margin-top:4px">Para restaurantes</div></div>
+      <div class="card am" style="text-align:center"><div class="ctitle" style="font-size:13px">"La única agencia que certifica tu clínica antes de enviarte pacientes"</div><div class="cbody" style="font-size:11px;margin-top:4px">Para clínicas</div></div>
+    </div>
+  </div>
+
+  <!-- 3.3 CANALES -->
+  <div class="cb">
+    <div class="ch"><span class="ch-title">3.3 — Canales de distribución y promoción</span><span class="ch-badge">3 canales</span></div>
+    <div class="cbody2">
+      <div class="g3" style="margin-bottom:18px">
+        <div class="card">
+          <div class="badge btl">Canal directo</div>
+          <div class="ctitle">Visita personal + WhatsApp</div>
+          <div class="fr"><span class="fd"></span><span>Prospección directa con dueños de negocios en Mexicali</span></div>
+          <div class="fr"><span class="fd"></span><span>Demo del dashboard en sitio — 20 minutos que cambian la conversación</span></div>
+          <div class="fr"><span class="fd"></span><span>Cierre con piloto de un mes a precio de entrada</span></div>
+          <div class="fr"><span class="fd"></span><span>WhatsApp Business propio con IA para calificar leads</span></div>
+        </div>
+        <div class="card">
+          <div class="badge bpu">Canal digital</div>
+          <div class="ctitle">Redes sociales + SEO local</div>
+          <div class="fr"><span class="fd pu"></span><span>Instagram: datos anonimizados, casos de éxito, antes/después</span></div>
+          <div class="fr"><span class="fd pu"></span><span>LinkedIn: posicionamiento como experto en BI para PYME fronteriza</span></div>
+          <div class="fr"><span class="fd pu"></span><span>Google Business propio optimizado en inglés y español</span></div>
+          <div class="fr"><span class="fd pu"></span><span>TikTok: contenido corto educativo para dueños de negocio</span></div>
+        </div>
+        <div class="card">
+          <div class="badge bam">Canal referido</div>
+          <div class="ctitle">Aliados y programa de referidos</div>
+          <div class="fr"><span class="fd am"></span><span>Un mes de servicio gratis por cada cliente referido que cierre</span></div>
+          <div class="fr"><span class="fd am"></span><span>Alianza con distribuidores de sistemas de cobro</span></div>
+          <div class="fr"><span class="fd am"></span><span>Contadores locales que atienden restaurantes y clínicas</span></div>
+          <div class="fr"><span class="fd am"></span><span>Presencia en cámaras de comercio: CANIRAC, COPARMEX</span></div>
+        </div>
+      </div>
+      <!-- IMAGEN CANALES -->
+      <div class="ph ph-has-img" style="height:160px;border-radius:12px">
+        <img class="ph-img" src="5.png" alt="Red de canales y distribución" style="border-radius:12px">
+        <div class="ph-tag">Imagen 5</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- 4. PROSPECCIÓN Y PROMOCIÓN                -->
+<!-- ══════════════════════════════════════════ -->
+<section id="prospeccion">
+  <p class="sec-tag">Sección 4</p>
+  <h2>Prospección<br>y promoción</h2>
+  <p class="sec-desc">Cómo atraemos, calificamos y convertimos clientes — estrategia orgánica, publicidad pagada y embudo de conversión.</p>
+
+  <div class="split" style="margin-bottom:44px">
+    <!-- ORGÁNICO -->
+    <div>
+      <div style="font-size:13px;font-weight:500;color:var(--teal-m);margin-bottom:16px">Atracción orgánica — sin presupuesto publicitario</div>
+      <div class="funnel">
+        <div class="fstep">
+          <div class="fnum" style="background:rgba(29,158,117,.1);font-size:10px">IG</div>
+          <div><div class="ftitle">Instagram — contenido de valor semanal</div><div class="fdesc">"¿Sabes cuál platillo te deja más ganancia?" — posts con datos reales anonimizados. Cada publicación termina con una pregunta que el dueño no puede responder sin OperatIQ.</div></div>
+        </div>
+        <div class="fstep">
+          <div class="fnum" style="background:rgba(127,119,221,.1);color:#AFA9EC;font-size:10px">in</div>
+          <div><div class="ftitle">LinkedIn — posicionamiento como experto</div><div class="fdesc">Artículos sobre inteligencia operativa para PYME fronteriza. Meta: una publicación semanal dirigida a directores de clínicas y dueños de restaurantes.</div></div>
+        </div>
+        <div class="fstep">
+          <div class="fnum" style="background:rgba(56,138,221,.1);color:#85B7EB;font-size:10px">G</div>
+          <div><div class="ftitle">Google Business + SEO local</div><div class="fdesc">Perfil propio optimizado en inglés y español. Palabras clave: "consultor restaurante Mexicali", "agencia pacientes dentales". Publicaciones semanales con datos o consejos prácticos.</div></div>
+        </div>
+        <div class="fstep">
+          <div class="fnum" style="background:rgba(239,159,39,.1);color:#FAC775;font-size:10px">R</div>
+          <div><div class="ftitle">Red de aliados y referidos</div><div class="fdesc">Distribuidores de POS, proveedores de cámaras, contadores del sector. Comisión por referido cerrado. Presencia en reuniones de CANIRAC y COPARMEX Mexicali.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGADA -->
+    <div>
+      <div style="font-size:13px;font-weight:500;color:var(--teal-m);margin-bottom:16px">Publicidad pagada — conversión de leads calificados</div>
+      <div class="card bl" style="margin-bottom:10px">
+        <div class="badge bbl">Meta Ads · Facebook / Instagram</div>
+        <div class="ctitle" style="font-size:13px">Campañas de conversión local</div>
+        <div class="fr"><span class="fd bl"></span><span>Audiencia: dueños de negocio, Mexicali, 30–55 años, interés en tecnología y administración</span></div>
+        <div class="fr"><span class="fd bl"></span><span>Creatividad: video del dashboard — "¿Esto es lo que ves en tu negocio ahora mismo?"</span></div>
+        <div class="fr"><span class="fd bl"></span><span>CTA: "Agenda tu demo gratuita de 20 minutos"</span></div>
+        <div class="fr"><span class="fd bl"></span><span>KPI: costo por lead calificado menor a $300 MXN</span></div>
+      </div>
+      <div class="card tl" style="margin-bottom:14px">
+        <div class="badge btl">Google Ads · Búsqueda local</div>
+        <div class="ctitle" style="font-size:13px">Palabras clave de alta intención</div>
+        <div class="fr"><span class="fd"></span><span>Búsquedas objetivo: "consultor restaurante Mexicali", "agencia pacientes dentales", "dashboard ventas restaurante"</span></div>
+        <div class="fr"><span class="fd"></span><span>Radio de 50 km desde Mexicali — cubre todo el Valle y zona fronteriza</span></div>
+        <div class="fr"><span class="fd"></span><span>KPI: tasa de clic mayor a 5% en búsquedas locales</span></div>
+      </div>
+      <!-- IMAGEN ADS -->
+      <div class="ph" style="height:140px;border-radius:12px">
+        <div class="ph-tag">Imagen 6</div>
+        <div class="ph-ico"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#1D9E75" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+        <p class="ph-lbl">Mockup de anuncio en Instagram</p>
+        <p class="ph-rec">Teléfono en feed de Instagram mostrando anuncio de OperatIQ con dashboard y botón "Agendar demo". Estilo publicitario, teal sobre oscuro.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMBUDO -->
+  <div class="cb">
+    <div class="ch"><span class="ch-title">Embudo de conversión — de lead a cliente recurrente</span><span class="ch-badge">5 etapas</span></div>
+    <div class="cbody2">
+      <div class="funnel">
+        <div class="fstep"><div class="fnum">1</div><div><div class="ftitle">Captación</div><div class="fdesc">Post orgánico, anuncio pagado o referido de aliado → el lead llega al WhatsApp Business de OperatIQ. Punto de entrada único y controlado.</div></div></div>
+        <div class="fstep"><div class="fnum">2</div><div><div class="ftitle">Calificación automática con IA</div><div class="fdesc">La IA responde en menos de 2 minutos, hace 3 preguntas clave (tipo de negocio, sistema de cobro que usa, volumen aproximado) y agenda la demo en el calendario. El cliente siente atención inmediata y profesional.</div></div></div>
+        <div class="fstep"><div class="fnum">3</div><div><div class="ftitle">Demo presencial de 20 minutos</div><div class="fdesc">Se hace UNA pregunta que no pueden responder: "¿Cuál platillo o procedimiento te dejó más ganancia la semana pasada?" — y luego se responde con el dashboard en vivo con datos reales anonimizados. El argumento se demuestra en el momento, no se promete para después.</div></div></div>
+        <div class="fstep"><div class="fnum">4</div><div><div class="ftitle">Piloto de 30 días a precio de entrada</div><div class="fdesc">El cliente empieza a ver sus propios datos. Al mes 2, el costo de cancelar el servicio es mayor que el de quedarse — ya depende de la visibilidad operativa que el sistema le da. Retención natural sin contratos largos.</div></div></div>
+        <div class="fstep"><div class="fnum">5</div><div><div class="ftitle">Retención y upsell trimestral</div><div class="fdesc">Reporte mensual con recomendaciones concretas → propuesta de módulo adicional cada 3 meses (CCTV operativo, módulo en inglés para americanos, Sello de Clínica Verificada). El cliente crece en valor sin necesidad de venderle desde cero.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo">
+    <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+    <span class="logo-text">Operat<em>IQ</em></span>
+  </div>
+  <p class="ftxt">Estrategia de Marketing · Unidad 1 · Mexicali, B.C. · 2025</p>
+</footer>
+
+<script>
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-links a');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(a => a.classList.remove('active'));
+      const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+secs.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
